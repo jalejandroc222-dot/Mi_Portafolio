@@ -1,0 +1,139 @@
+/* =========================================================
+   STYLE.CSS – Portafolio de Jose Alejandro Castañeda Garzón
+   ========================================================= */
+
+/* 🎨 Variables de color y diseño */
+:root {
+  --bg: #0b0f19;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22d3ee;
+  --stroke: #1f2937;
+}
+
+/* 🌞 Tema claro */
+:root.light {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #475569;
+  --accent: #0ea5e9;
+  --stroke: #e5e7eb;
+}
+
+/* 🌐 Estilos generales */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* 📄 Estructura */
+header, main, footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* 🧭 Encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--stroke);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+/* 🧍 Secciones */
+h1, h2, h3 {
+  margin: 12px 0;
+}
+
+section {
+  padding: 24px 0;
+}
+
+/* 🔘 Botones */
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out, background 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.05);
+}
+
+/* 🗂️ Tarjetas de proyectos */
+.proyecto {
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.acciones a {
+  margin-right: 10px;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 720px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 16px 0;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+/* 🖨️ Modo impresión */
+@media print {
+  header, nav, .btn, #themeBtn { display: none !important; }
+  body { color: #111; background: #fff; }
+}
